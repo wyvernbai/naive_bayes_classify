@@ -1,0 +1,35 @@
+== Description:
+
+1. naive_bayes_classify.rb
+    naive_bayes_classify is a document classify programme.
+
+    Usage:
+        naive_bayes_classify [options] <Dirname>+
+    where [options] are:
+    --train, -t <s>:   Train a model from a Dir
+    --test, -e <s>:   Test a dir from Mode
+    --model, -m <s>:   Model name for test or the output of train
+    --thres, -h <f>:   Threshold value for Naive Bayes Classify (default: 1.5)
+    --version, -v:   Print version and exit
+    --help, -l:   Show this message
+
+
+2. result_analyze.rb
+    result_analyze is a naive_bayes_classify result analyze programme.
+    Usage:
+        result_analyze [options] <filename>
+    where [options] are:
+    --file, -f <s>:   Output file of "naive_bayes_classify"
+    --version, -v:   Print version and exit
+    --help, -h:   Show this message
+
+
+== Example:
+
+Sample Data: http://people.csail.mit.edu/jrennie/20Newsgroups/
+1.train
+    naive_bayes_classify.rb -t 20news-bydate-train -m 20news-bydate-train.model -h 1.5
+2.test
+    naive_bayes_classify.rb -e 20news-bydate-test -m 20news-bydate-train.model > 20news-bydate-test.res
+3.result analysis
+    result_analyze -f 20news-bydate-test.res
